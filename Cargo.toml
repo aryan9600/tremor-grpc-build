@@ -1,0 +1,16 @@
+[package]
+name = "tremor-grpc-build"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+prost-build = "0.8"
+prost-types = "0.8"
+tempfile = "3"
+prost = "0.8"
+heck = "0.3"
+itertools = "0.10"
+proc-macro2 = "1.0.29"
+quote = "1.0"
