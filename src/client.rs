@@ -400,9 +400,9 @@ fn generate_send_client_stream_request(
                             let (tx, rx) = async_std::channel::unbounded::<StaticValue>();
                             senders.insert(stream_id.clone(), tx.clone());
 
-                            let ctx_url_1 = ctx.url.clone();
-                            let ctx_url_2 = ctx.url.clone();
-                            let ctx_url_3 = ctx.url.clone();
+                            let ctx_url_1 = ctx.alias.clone();
+                            let ctx_url_2 = ctx.alias.clone();
+                            let ctx_url_3 = ctx.alias.clone();
 
                             let rx = rx.filter_map(move |val| {
                                 match tremor_value::structurize::<#request_message_ident>(val.0.clone()) {
@@ -540,9 +540,9 @@ fn generate_send_binary_stream_request(
                     } else {
                         let (tx, rx) = async_std::channel::unbounded::<StaticValue>();
                         senders.insert(stream_id.clone(), tx.clone());
-                        let ctx_url_1 = ctx.url.clone();
-                        let ctx_url_2 = ctx.url.clone();
-                        let ctx_url_3 = ctx.url.clone();
+                        let ctx_url_1 = ctx.alias.clone();
+                        let ctx_url_2 = ctx.alias.clone();
+                        let ctx_url_3 = ctx.alias.clone();
                         let rx = rx.filter_map(move |val| {
                             match tremor_value::structurize::<#request_message_ident>(val.0.clone()) {
                                 Ok(structured_value) => Some(structured_value),
